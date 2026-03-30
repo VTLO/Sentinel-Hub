@@ -43,8 +43,8 @@ importers:
         specifier: ^4.17.21
         version: 4.17.25
       '@types/node':
-        specifier: ^20.12.7
-        version: 20.19.37
+        specifier: ^24.0.0
+        version: 24.14.0
       typescript:
         specifier: ^5.4.5
         version: 5.9.3
