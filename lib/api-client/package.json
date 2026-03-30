@@ -1,0 +1,12 @@
+{
+  "name": "@sentinel-hub/api-client",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@sentinel-hub/api-zod": "workspace:*"
+  }
+}

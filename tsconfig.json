@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./lib/api-zod"
+    },
+    {
+      "path": "./lib/api-client"
+    },
+    {
+      "path": "./lib/db-models"
+    },
+    {
+      "path": "./artifacts/api-gateway"
+    },
+    {
+      "path": "./artifacts/web-dashboard"
+    }
+  ]
+}
