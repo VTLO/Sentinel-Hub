@@ -1,0 +1,15 @@
+{
+  "name": "sentinel-hub-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "pnpm -r run build",
+    "test": "pnpm -r run test",
+    "lint": "pnpm -r run lint",
+    "typecheck": "pnpm -r run typecheck"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2",
+    "prettier": "^3.8.1"
+  }
+}
