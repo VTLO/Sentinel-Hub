@@ -4,11 +4,11 @@ on:
   push:
     branches: ["master", "main"]
     paths:
-      - 'artifacts/web-dashboard/**'
-      - 'lib/**'
-      - 'package.json'
-      - 'pnpm-workspace.yaml'
-      - 'pnpm-lock.yaml'
+      - "artifacts/web-dashboard/**"
+      - "lib/**"
+      - "package.json"
+      - "pnpm-workspace.yaml"
+      - "pnpm-lock.yaml"
   workflow_dispatch:
 
 permissions:
@@ -33,10 +33,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24'
-          cache: 'pnpm'
+          node-version: "22"
+          cache: "pnpm"
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --frozen-lockfile
       - name: Build Web Dashboard
         run: pnpm --filter @sentinel-hub/web-dashboard run build
       - name: Setup Pages
@@ -44,7 +44,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './artifacts/web-dashboard/dist'
+          path: "./artifacts/web-dashboard/dist"
 
   deploy:
     environment:
@@ -56,4 +56,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        

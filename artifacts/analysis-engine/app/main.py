@@ -6,9 +6,11 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI(title="Sentinel-Hub Analysis Engine")
 
+
 @app.get("/health")
 async def health_check():
     return {"status": "ok", "service": "analysis-engine"}
+
 
 @app.post("/scan")
 async def run_scan(target: str):

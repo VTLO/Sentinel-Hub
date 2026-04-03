@@ -13,16 +13,19 @@ Merci de l'intérêt que vous portez à **Sentinel-Hub** ! Ce document définit 
 ## Standards de Code
 
 ### TypeScript / Node.js / React
+
 - Nous utilisons **Prettier** pour le formatage du code. Assurez-vous que votre éditeur est configuré pour formater lors de la sauvegarde, ou exécutez le script de formatage avant de commiter.
 - Le mode strict de TypeScript est activé. Évitez l'utilisation de `any` et typez explicitement vos variables et retours de fonctions.
 
 ### Python
+
 - Le code Python doit respecter la norme **PEP 8**.
 - Nous utilisons `flake8` dans notre pipeline CI pour vérifier la syntaxe et le style.
 
 ## Structure des Commits
 
 Nous recommandons d'utiliser les conventions de **Conventional Commits** :
+
 - `feat:` pour une nouvelle fonctionnalité
 - `fix:` pour une correction de bug
 - `docs:` pour des modifications de documentation
@@ -33,6 +36,7 @@ Exemple : `feat: ajout de la détection des vulnérabilités DNS`
 ## Intégration Continue (CI)
 
 Toutes les Pull Requests déclenchent automatiquement nos workflows GitHub Actions :
+
 - **Build TypeScript** : Vérifie la compilation et les types de l'ensemble du monorepo.
 - **Build Python** : Vérifie la syntaxe et le linting du code Python.
 

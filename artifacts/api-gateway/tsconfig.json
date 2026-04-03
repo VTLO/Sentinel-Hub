@@ -7,8 +7,5 @@
     "rootDir": "./src"
   },
   "include": ["src/**/*"],
-  "references": [
-    { "path": "../../lib/api-zod" },
-    { "path": "../../lib/db-models" }
-  ]
+  "references": [{ "path": "../../lib/api-zod" }, { "path": "../../lib/db-models" }]
 }

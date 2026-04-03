@@ -10,12 +10,12 @@ Le projet se distingue par son architecture hybride, combinant la robustesse de 
 
 Le tableau ci-dessous détaille les principaux composants du système et leurs rôles respectifs :
 
-| Composant | Type | Technologies | Rôle Principal |
-| :--- | :--- | :--- | :--- |
-| **Web Dashboard** | Frontend | React, Vite, Tailwind | Interface utilisateur pour la visualisation des alertes et la configuration. |
-| **API Gateway** | Backend | Node.js, Fastify, Zod | Point d'entrée centralisé gérant l'authentification et la logique métier. |
-| **Analysis Engine** | Microservice | Python, FastAPI | Moteur d'analyse asynchrone pour la détection de menaces et le scan. |
-| **Core Libs** | Bibliothèques | TypeScript | Partage de types, schémas de validation et clients API entre services. |
+| Composant           | Type          | Technologies          | Rôle Principal                                                               |
+| :------------------ | :------------ | :-------------------- | :--------------------------------------------------------------------------- |
+| **Web Dashboard**   | Frontend      | React, Vite, Tailwind | Interface utilisateur pour la visualisation des alertes et la configuration. |
+| **API Gateway**     | Backend       | Node.js, Fastify, Zod | Point d'entrée centralisé gérant l'authentification et la logique métier.    |
+| **Analysis Engine** | Microservice  | Python, FastAPI       | Moteur d'analyse asynchrone pour la détection de menaces et le scan.         |
+| **Core Libs**       | Bibliothèques | TypeScript            | Partage de types, schémas de validation et clients API entre services.       |
 
 ## Structure du Monorepo
 
@@ -32,11 +32,13 @@ L'organisation du code suit une structure modulaire stricte pour faciliter le d�
 Pour commencer à travailler sur le projet, assurez-vous d'avoir installé `pnpm` et `python 3.11+`.
 
 1. **Installation des dépendances Node.js** :
+
    ```bash
    pnpm install
    ```
 
 2. **Configuration de l'environnement Python** :
+
    ```bash
    cd artifacts/analysis-engine
    python -m venv venv
