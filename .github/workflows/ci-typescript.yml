@@ -30,8 +30,8 @@ jobs:
       - name: Vérification du formatage (Lint)
         run: pnpm run lint
 
-      - name: Vérification des types
-        run: pnpm run typecheck
-
       - name: Exécution du build
         run: pnpm run build
+
+      - name: Vérification des types
+        run: pnpm run typecheck
