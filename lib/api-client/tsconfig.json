@@ -7,7 +7,5 @@
     "rootDir": "./src"
   },
   "include": ["src/**/*"],
-  "references": [
-    { "path": "../api-zod" }
-  ]
+  "references": [{ "path": "../api-zod" }]
 }

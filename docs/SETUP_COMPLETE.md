@@ -5,6 +5,7 @@ Ce document décrit les étapes nécessaires pour configurer l'environnement de 
 ## Prérequis
 
 Avant de commencer, assurez-vous d'avoir installé les outils suivants sur votre machine :
+
 - **Node.js** (version 20 ou supérieure)
 - **pnpm** (version 9 ou supérieure)
 - **Python** (version 3.11 ou supérieure)
@@ -24,6 +25,7 @@ cd Sentinel-Hub
 Le projet utilise `pnpm workspaces` pour gérer les dépendances des différents paquets (frontend, backend Node.js, et bibliothèques partagées).
 
 1. Installez toutes les dépendances à la racine du projet :
+
    ```bash
    pnpm install
    ```
@@ -38,11 +40,13 @@ Le projet utilise `pnpm workspaces` pour gérer les dépendances des différents
 Le moteur d'analyse (`analysis-engine`) est développé en Python. Il est recommandé d'utiliser un environnement virtuel.
 
 1. Naviguez vers le répertoire du moteur d'analyse :
+
    ```bash
    cd artifacts/analysis-engine
    ```
 
 2. Créez et activez un environnement virtuel :
+
    ```bash
    python -m venv venv
    source venv/bin/activate  # Sur Windows : venv\Scripts\activate
@@ -58,21 +62,27 @@ Le moteur d'analyse (`analysis-engine`) est développé en Python. Il est recomm
 Vous pouvez maintenant lancer les différents services.
 
 ### Lancer l'API Gateway (Node.js)
+
 Depuis la racine du projet :
+
 ```bash
 cd artifacts/api-gateway
 pnpm run dev
 ```
 
 ### Lancer le Web Dashboard (React/Vite)
+
 Depuis la racine du projet :
+
 ```bash
 cd artifacts/web-dashboard
 pnpm run dev
 ```
 
 ### Lancer l'Analysis Engine (Python)
+
 Depuis le répertoire `artifacts/analysis-engine` (avec l'environnement virtuel activé) :
+
 ```bash
 uvicorn app.main:app --reload --port 8000
 ```

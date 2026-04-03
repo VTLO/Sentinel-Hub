@@ -18,7 +18,5 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src"],
-  "references": [
-    { "path": "../../lib/api-client" }
-  ]
+  "references": [{ "path": "../../lib/api-client" }]
 }
