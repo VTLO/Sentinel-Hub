@@ -1,37 +1,39 @@
-name: Build TypeScript (pnpm)
-
+name: Build APK
 on:
   push:
-    branches: ["main", "master"]
-  pull_request:
-    branches: ["main", "master"]
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout du code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 10 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, cache: pnpm }
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: 21 }
+      - uses: android-actions/setup-android@v3
+      - run: sdkmanager "platforms;android-36" "build-tools;36.0.0"
 
-      - name: Installation de pnpm
-        uses: pnpm/action-setup@v4
+      - run: pnpm install --no-frozen-lockfile
+      - run: pnpm run build            # Vite -> dist/
+
+      - name: Capacitor Android
+        run: |
+          pnpm add @capacitor/core @capacitor/cli @capacitor/android
+          pnpm exec cap add android
+          pnpm exec cap sync android
+
+      - name: Build debug APK
+        run: |
+          cd android && chmod +x ./gradlew
+          ./gradlew assembleDebug --no-daemon
+
+      - uses: actions/upload-artifact@v4
         with:
-          version: 9
-
-      - name: Configuration de Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "24"
-          cache: "pnpm"
-
-      - name: Installation des dépendances
-        run: pnpm install --no-frozen-lockfile
-
-      - name: Vérification du formatage (Lint)
-        run: pnpm run lint
-
-      - name: Exécution du build
-        run: pnpm run build
-
-      - name: Vérification des types
-        run: pnpm run typecheck
+          name: AuditTPME-debug-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error        run: pnpm run typecheck
