@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "pnpm -r run build",
+    "build": "tsc -b tsconfig.json",
     "test": "pnpm -r run test",
     "lint": "prettier --check .",
     "lint:fix": "prettier --write .",
-    "typecheck": "pnpm -r run typecheck"
+    "typecheck": "tsc -b --noEmit"
   },
   "devDependencies": {
     "typescript": "^5.9.2",

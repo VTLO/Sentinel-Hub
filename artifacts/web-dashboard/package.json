@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc -b tsconfig.json && vite build",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc -b tsconfig.json --noEmit"
   },
   "dependencies": {
     "@sentinel-hub/api-client": "workspace:*",
